@@ -1,0 +1,50 @@
+
+public class Ejercicio2 {
+
+    public static int[] reporte(int[] compra1) {
+
+        int suma = 0;
+        int menor = compra1[0];
+        int mayor = compra1[0];
+
+        for (int i = 0; i < compra1.length; i++) {
+
+            suma = suma + compra1[i];
+
+            if (compra1[i] < menor) {
+                menor = compra1[i];
+            }
+
+            if (compra1[i] > mayor) {
+                mayor = compra1[i];
+            }
+        }
+
+        int[] estadisticas = {
+            suma, menor, mayor
+        };
+
+        return estadisticas;
+    }
+
+    public static void main(String[] args) {
+
+        int[] compra1 = {
+            2700, 9500, 300, 15000, 1800, 10000, 400, 3000, 400, 7500,
+            2200, 8900, 1200, 5600, 9800, 4300, 1500, 6700, 2100, 13400,
+            3200, 4800, 9200, 16000, 700, 2600, 8100, 5400, 3900, 11000,
+            600, 1700, 14500, 8800, 2300, 5100, 9400, 12000, 2900, 3600,
+            2000, 7800, 4100, 6500, 10200, 500, 1400, 8700, 15600, 3300,
+            2700, 9600, 1800, 4200, 6900, 11800, 2400, 5300, 9100, 1000,
+            3400, 7600, 1300, 8400, 14700, 2800, 4600, 9900, 6100, 17000,
+            900, 1900, 5700, 8200, 2500, 13500, 4400, 6800, 10500, 3100,
+            3800, 7200, 1600, 8600, 12500, 2100, 4900, 9300, 5900, 11500
+        };
+
+        int[] resultado = reporte(compra1);
+
+        System.out.println("Costo total: $" + resultado[0]);
+        System.out.println("Producto más barato: $" + resultado[1]);
+        System.out.println("Producto más caro: $" + resultado[2]);
+    }
+}
